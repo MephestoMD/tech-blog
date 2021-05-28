@@ -3,8 +3,8 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-const helpers = require('./utils/helpers');
-const methodOverride = require('method-override');
+// const helpers = require('./utils/helpers');
+// const methodOverride = require('method-override');
 var compression = require('compression')
 
 const sequelize = require('./config/connection');
@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
- const hbs = exphbs.create({ helpers });
+ const hbs = exphbs.create();
 
 const sess = {
   secret: 'Super secret secret',
@@ -26,7 +26,7 @@ const sess = {
   })
 };
 app.use(session(sess));
-app.use(methodOverride('_method'));
+// app.use(methodOverride('_method'));
 app.use(compression());
 
 // Inform Express.js on which template engine to use

@@ -8,6 +8,7 @@ router.post('/signup', async (req, res) => {
       const userData = await User.create(req.body);
       req.session.save(() => {
         req.session.user_id = userData.id;
+        req.session.username = userData.username;
         req.session.logged_in = true;
         res.status(200).json(userData);
       });
@@ -21,7 +22,7 @@ router.post('/signup', async (req, res) => {
 // Route to login along with data validation
   router.post('/login', async (req, res) => {
     try {
-      const userData = await User.findOne({ where: { email: req.body.email } });
+      const userData = await User.findOne({ where: { username: req.body.username } });
       if (!userData) {
         res
           .status(400)
@@ -45,6 +46,18 @@ router.post('/signup', async (req, res) => {
       });
   
     } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+
+  // Route to destroy user session upon logout
+  router.post('/logout', (req, res) => {
+  
+      if (req.session.logged_in) {
+        // console.log(flag)
+        req.session.destroy();
+        res.json(200);
+    } else {
       res.status(400).json(err);
     }
   });

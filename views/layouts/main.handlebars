@@ -15,8 +15,7 @@
 
 
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -31,17 +30,21 @@
       </li>
       {{#if logged_in}}  
       <li class="nav-item">
-        <a class="nav-link" href="/logout">Logout</a>
+        <a class="nav-link" id ="logout" href="#">Logout</a>
       </li>
       {{/if}}
     </ul>
   </div>
 </nav>
 
-<main>
-    {{{body}}}
-</main>
 
+    {{{body}}}
+  
+
+
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 

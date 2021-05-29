@@ -1,5 +1,41 @@
+body {
+    background-color: #DDF2EB;
+}
+
+a:link{
+    text-decoration: none!important;
+  }
+
+nav {
+    height: 75px;
+    font-size: 1.5rem;
+}
+
 .login-signup {
     width: 33%;
     margin: auto;
     padding-top: 45px;
+}
+
+#create-post-form {
+    width: 50%;
+    margin: auto;
+    padding-top: 45px;
+}
+
+#Textarea {
+    height: 200px;
+}
+
+.btn-lg {
+    display: block;  
+    margin: 500px auto;
+    font-size: 50px;
+    width: 15%;
+}
+
+#post-text {
+    font-size: 2rem;
+    font-weight: bolder;
+    text-decoration: none;
 }

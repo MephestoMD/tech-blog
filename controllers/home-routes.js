@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     });
    
     const posts = allPosts.map((i) => i.get({ plain: true }));
-    console.log(posts[0].comments)
+    // console.log(posts[0].comments)
     res.render('home', {posts, logged_in: req.session.logged_in});
   } catch (err) {
     res.status(400).json(err);

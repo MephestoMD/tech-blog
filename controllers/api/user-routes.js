@@ -54,7 +54,7 @@ router.post('/signup', async (req, res) => {
   
       if (req.session.logged_in) {
         // console.log(flag)
-        req.session.destroy();
+        req.session.destroy(req.session.logged_in = false);
         res.json(200);
     } else {
       res.status(400).end();

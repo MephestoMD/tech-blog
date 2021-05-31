@@ -40,7 +40,7 @@ router.put('/update/:id', withAuth, async (req, res) => {
 router.delete('/delete/:id', withAuth, async (req, res) => {
     try {
         const delPost = await Post.destroy({where: {id: req.params.id}});
-            res.status(200).json(updPost);
+            res.status(200).json(delPost);
           } 
           catch (err) {
             res.status(400).json(err);

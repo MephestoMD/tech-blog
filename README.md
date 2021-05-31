@@ -1,8 +1,8 @@
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green?raw=true)  
 
-## Title 
-TechBlogger
+# TechBlogger
+
 
 ## Description 
 TechBlogger is an MVC based technology-centered community posting app designed to make the sharing of ideas in the coding world simple, intuitive and fun!
@@ -48,5 +48,5 @@ https://handlebarsjs.com/
 
 
 ## Application screenshot
-![Homepage](./tech-blog/public/Images/HomePage.PNG)
-![Expanded Comments](./tech-blog/public/Images/Comments.PNG)
+![Homepage](./public/Images/HomePage.PNG)
+![Expanded Comments](./public/Images/Comments.PNG)

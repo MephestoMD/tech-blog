@@ -8,12 +8,12 @@
 TechBlogger is an MVC based technology-centered community posting app designed to make the sharing of ideas in the coding world simple, intuitive and fun!
 
 ## Table of Contents
-1.[Installation](#installation)
-2.[How to use website features](#how-to-use-website-features)
-3.[Code contribution](#code-contribution)
-4.[Tests](#tests)
-5.[Application link](#application-deployed-link)
-6.[Screenshot](#application-screenshot)
+1. [Installation](#installation)
+2. [How to use website features](#how-to-use-website-features)
+3. [Code contribution](#code-contribution)
+4. [Tests](#tests)
+5. [Application link](#application-deployed-link)
+6. [Screenshot](#application-screenshot)
 
 ## Installation
 - Install Node.js  

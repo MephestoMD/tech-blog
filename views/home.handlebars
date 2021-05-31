@@ -1,1 +1,37 @@
-<a href="/post"><button type="button" class="btn btn-dark btn-lg"><span id = "post-text">+ New Post</span></button></a>
+{{#if posts}}
+<div class = "post-space">
+{{#each posts as |post|}}
+
+    <div class="card post-card">
+        <h5 class="card-header"><a class="post-title" href = "/comment/{{post.id}}">{{post.title}}</a> <span class = "post-attribution"> Created by: <span class = "user-info">{{post.user.username}}</span> 
+        <br> On: <span class = "user-info"> {{format_date post.createdAt}}</span></span>
+        </h5>
+        <div class="card-body">
+            <p class="card-text">{{post.content}}</p>
+        </div>
+    </div>
+    
+    {{#if post.comments.length}}
+    <button class="btn btn-primary bg-dark" type="button" data-toggle="collapse" data-target=".multi-collapse{{post.id}}" aria-expanded="false" aria-controls="collapseExample">
+    Expand {{comments.length}} comments
+    </button>
+     {{#each comments}}
+    <div class="collapse multi-collapse{{post.id}}" id="{{post.id}}">
+    <div class="card card-body" id="comment-card" style="width:750px">
+        <span id= "comment">{{this.content}}</span>
+        <span id="commenter"><strong>By: {{this.user.username}}</strong></span>
+        <span id="commentedAt"><strong>{{format_dateSpec this.createdAt}}</strong></span> 
+    </div>
+    </div>
+    {{/each}}
+    {{/if}}  
+{{/each}}
+</div>
+{{else}}
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Welcome to TechBlogger</h1>
+    <p class="lead">As posts are made, they will appear here!</p>
+  </div>
+</div>
+{{/if}}

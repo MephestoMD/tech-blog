@@ -4,7 +4,6 @@ const { User } = require('../../models');
 // Route to create user on signup
 router.post('/signup', async (req, res) => {
     try {
-    console.log('hello');
       const userData = await User.create(req.body);
       req.session.save(() => {
         req.session.user_id = userData.id;
@@ -58,7 +57,7 @@ router.post('/signup', async (req, res) => {
         req.session.destroy();
         res.json(200);
     } else {
-      res.status(400).json(err);
+      res.status(400).end();
     }
   });
 

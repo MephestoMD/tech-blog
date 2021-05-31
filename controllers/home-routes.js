@@ -50,6 +50,23 @@ router.get('/dashboard', async (req, res) => {
 });
 
 // Route to take user to the comment page for the selected comment
+router.get('/edit/:id', async (req, res) => {
+  try {
+    if(!req.session.logged_in){
+      res.redirect('/login')
+    }
+      const edPost = await Post.findAll({
+      where: {id: req.params.id},
+    });
+    const post = edPost.map((i) => i.get({ plain: true }));
+    // console.log(post)
+    res.render('edit', {post, logged_in: req.session.logged_in});
+  } catch (err) {
+    res.status(400).json(err);
+  }
+  
+});
+
 router.get('/comment/:id', async (req, res) => {
   try {
     if(!req.session.logged_in){

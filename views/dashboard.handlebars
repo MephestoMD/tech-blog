@@ -3,7 +3,7 @@
 {{#each posts as |post|}}
 
     <div class="card post-card">
-    <h5 class="card-header"><a class="post-title" href = "/comment">{{post.title}}</a> <span class = "post-attribution"> Created by: <span class = "user-info">{{post.user.username}}</span> 
+    <h5 class="card-header"><a class="post-title" href = "/edit/{{post.id}}">{{post.title}}</a> <span class = "post-attribution"> Created by: <span class = "user-info">{{post.user.username}}</span> 
     <br> On: <span class = "user-info"> {{format_date post.createdAt}}</span></span>
     </h5>
     <div class="card-body">

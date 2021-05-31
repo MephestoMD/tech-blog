@@ -2,19 +2,19 @@
 <div class = "post-space">
     <div class="card post-card">
         <h5 class="card-header"><a class="post-title" href = "/comment">{{post.title}}</a> <span class = "post-attribution"> Created by: <span class = "user-info">{{post.user.username}}</span> 
-        <br> On: <span class = "user-info"> {{format_date post.createdAt}}</span></span>
+        On: <span class = "user-info"> {{format_date post.createdAt}}</span></span>
         </h5>
         <div class="card-body">
             <p class="card-text">{{post.content}}</p>
         </div>
     </div>
     <div class="card post-card">
-        <h5 class="card-header"><span class = "post-title">Leave a comment: </span></h5>
+        <h5 class="card-header"><span style="visibility: hidden">Hidden</span> </h5>
         <form id="add-comment-form">
         <div class="form-group">
-            <textarea class="form-control" id="{{post.id}}" rows = "5" placeholder="What's on your mind?"></textarea>
+            <textarea class="form-control" id="{{post.id}}" rows = "5" placeholder="Leave a comment here"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary bg-dark">Submit</button>
         </form>
     </div>
 </div>

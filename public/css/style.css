@@ -36,10 +36,10 @@ nav {
     font-size: 35px;
 }
 
-#create-post-form {
+#create-post-form, .edit-post-form {
     width: 50%;
     margin: auto;
-    padding-top: 45px;
+    /* padding-top: 45px; */
 }
 .post-space {
     display: flex;
@@ -81,6 +81,15 @@ nav {
 }
 .post-title:hover {
     color: #04030F;
+}
+
+#post-header {
+    color: white;
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
+    width: 50%;
+    background-color: #776885;
 }
 
 .btn {

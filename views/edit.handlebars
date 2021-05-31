@@ -1,0 +1,18 @@
+{{log post}}
+<h5 class="card-header" id = "post-header">Edit Post</h5>
+<form class = "edit-post-form" id="{{post.0.id}}">
+  <div class="form-group">
+    <label for="titleInput">Post Title</label>
+    <input type="text" class="form-control" id="title-input" value="{{post.0.title}}"></input>
+  </div>
+
+  <div class="form-group">
+    <label for="Textarea">Post Content</label>
+    <textarea class="form-control" id="text-area" rows = "8" placeholder="What's on your mind?">{{post.0.content}}</textarea>
+  </div>
+  <button type="submit" onClick="editFormHandler()" class="btn btn-primary bg-dark" name="Update" value="PUT">Update</button>
+  <button type="submit" onClick="deleteHandler()"class="btn btn-primary bg-dark" name="Delete" value="DELETE">Delete</button>
+</form>
+
+<script src="/js/update.js"></script>
+{{!-- <script src="./js/delete.js"></script> --}}
